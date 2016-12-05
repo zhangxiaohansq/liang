@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+.warp{ width:980px; margin:0 auto; background:url(../images/bg.jpg); height:3000px;}
+
+#header{ padding:12px 0 8px; background:#010101;}
+#header h1{ margin-left:140px;}
+#header h1 a{ display:block; width:92px; height:30px; text-indent:-9999em; background:url(../images/logo.png) no-repeat;}
+#header .search{ width:200px; height:26px; margin-right:100px; position:relative;}
+#txt1{ width:100%; height:100%;}
+#p1{ position:absolute; color:#ccc; left:0; top:4px;}
+
+#nav{ background:url(../images/1.jpg) repeat-x; padding-left:170px;}
+#nav li{  padding:15px 26px 10px;}
+#nav a{ color:#fff;}
+#nav .active{ background:#8f7c6b;}
+#nav li:hover{ background:#8f7c6b;}
+
+
+#acd{ width:980px; height:404px; position:relative; overflow:hidden;}
+#acd li{ width:538px; height:404px; position:absolute; left:0; top:0; cursor:pointer;}
+#acd li .bor-l{ border-left:1px solid #000;}
+#acd .mask{ width:100%; height:100%; position:absolute; left:0; top:0; background:#000; z-index:999; opacity:0.7; filter:alpha(opacity:70);}
+
+#bowen h2{ width:270px; margin:0 auto -35px; padding:30px 0 20px;; text-align:center;}
+#bowen .bowen_s{ width:780px; margin:0 auto 20px;}
+#bowen span{ width:200px; display:block; border:1px solid #eae1d8;}
+
+#bowen .cont{ width:780px; height:500px; margin:0 auto; background:red;}
+#bowen .cont li{ width:194px; border-left:1px solid #333;}
+
+
