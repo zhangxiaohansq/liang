@@ -1,148 +1,134 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>无标题文档</title>
-<link rel="stylesheet" href="css/base.css" />
-<link rel="stylesheet" href="css/index.css" />
-<script src="js/jquery-1.8.3.js"></script>
-<script src="js/common.js"></script>
-<script>
-	window.onload = function () {
-		var oUl=document.getElementById('acd');
-		var aLi=oUl.children;
-		var aDiv=oUl.getElementsByTagName('div');
-
-		// 布局
-		var W=90;
-		var oLiW=aLi[0].offsetWidth;
-		for(var i=1; i<aLi.length; i++){
-			aLi[i].index = i;
-			aLi[i].style.left=oLiW+(i-1)*W+'px';
-		}
-		
-		oUl.onmouseover = function(ev){
-			var oEvent = ev || event;
-			var target = oEvent.target || oEvent.srcElement;
-			aLi[0].index = 0;
-			if(target.tagName == 'DIV'){
-				move(target,{opacity:0},1000);
-				move(target.parentNode,{left:W*target.parentNode.index},1000);
-				target.parentNode.className = '';
-				for(var i=0; i<target.parentNode.index; i++){
-					move(aLi[i],{left:i*W},1000);
-					move(aDiv[i],{opacity:70},1000);
-					aLi[i].className = 'bor-l';
-				}
-				for(var i=target.parentNode.index+1; i<aLi.length; i++){
-					move(aLi[i],{left:oLiW + (i-1)*W},1000);
-					aLi[i].className = 'bor-l';
-					move(aDiv[i],{opacity:70},1000);
-				}
-			}
-		};
-	};
-</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no,email=no">
+	<title>大数医达</title>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/swiper.min.js"></script>	
+	<script src="js/index.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=M1TLtBBYdlr2bZBr1sGDorgEDssOQtTE"></script>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/index.css">
 </head>
-
 <body>
-	<div class="warp">
-    	<!----Header---->
-    	<div id="header" class="clearfix">
-        	<h1 class="fl" title="专注前端">
-            	<a href="javascript:;">专注前端</a>
-            </h1>
-            <div class="fr search">
-            	<input id="txt1" type="text" value="" name="scerch" />
-                <span id="p1">搜索</span>
-            </div>
-        </div>
-        <!----End Header---->
-        
-        <!----Nav---->
-        <ul id="nav" class="clearfix">
-        	<li class="fl active">
-            	<a href="javascript:;">官网首页</a>
-            </li>
-            <li class="fl">
-            	<a href="javascript:;">个人简介</a>
-            </li>
-            <li class="fl">
-            	<a href="javascript:;">Javascript</a>
-            </li>
-            <li class="fl">
-            	<a href="javascript:;">Jquery</a>
-            </li>
-            <li class="fl">
-            	<a href="javascript:;">Ajax</a>
-            </li>
-            <li class="fl">
-            	<a href="javascript:;">Jsonp</a>
-            </li>
-            <li class="fl">
-            	<a href="javascript:;">Anjulal</a>
-            </li>
-        </ul>
-        <!----End Nav---->
-        
-        <!----Acd---->
-        <ul id="acd">
-            <li style="z-index: 999;">
-                <img src="images/acd_1.jpg">
-                <div class="mask" style="opacity: 0;"></div>
-            </li>
-            <li style="z-index: 1000;" class="bor-l">
-                <img src="images/acd_2.jpg">
-                <div class="mask"></div>
-            </li>
-            <li style="z-index: 1001;" class="bor-l">
-                <img src="images/acd_3.jpg">
-                <div class="mask"></div>
-            </li>
-            <li style="z-index: 1002;" class="bor-l">
-                <img src="images/acd_4.jpg">
-                <div class="mask"></div>
-            </li>
-            <li style="z-index: 1003;" class="bor-l">
-                <img src="images/acd_5.jpg">
-                <div class="mask"></div>
-            </li>
-            <li style="z-index: 1004;" class="bor-l">
-                <img src="images/acd_6.jpg">
-                <div class="mask"></div>
-            </li>
-            <li style="z-index: 1005;" class="bor-l">
-               <img src="images/acd_7.jpg">
-                <div class="mask"></div>
-            </li>
-        </ul>
-        <!----End Acd---->
-        
-        <div id="bowen">
-        	<h2>选择你感兴趣的类别</h2>
-        	<div class="bowen_s clearfix">
-                <span class="fl"></span>	
-                <span class="fr"></span>
-            </div>
-            <ul class="cont clearfix">
-            	<li class="fl">
-                	<div></div>
-                    <div></div>
-                </li>
-            	<li class="fl">
-                	<div></div>
-                    <div></div>
-                </li>
-            	<li class="fl">
-                	<div></div>
-                    <div></div>
-                </li>
-            	<li class="fl">
-                	<div></div>
-                    <div></div>
-                </li>
-            </ul>
-        </div>
-    </div>
+	<header class="clearfix" id="a1">
+		<menu id="btn"></menu>
+		<h1>大数医达</h1>
+	</header>
+	<ul id="menu">
+		<li><a href="#a1">首页</a></li>
+		<li><a href="index2.html">产品简介</a></li>
+		<li><a href="#map">联系我们</a></li>
+		<li class="close">×</li>
+	</ul>
+	<div class="banner">
+		<img src="img/banner.jpg" alt="">
+		<div class="banner_txt">
+			<span class="up">人工智能的一小步，</span>
+			<div class="down clearfix">
+				<div class="fl banner_red">医疗健康</div>
+				<div class="fl">一大步</div>
+			</div>
+		</div>
+	</div>
+	<div class="about">
+		<div class="clearfix" id="a2">
+			<span class="number fl">01</span>
+			<h2 class="fl">关于我们</h2>
+		</div>
+		<span class="about_red"></span>
+		<p>北京大数医达有限公司是一家在人工智能、大数据、云计算方面拥有国际领先水平的高科技企业，专注于多源异构医疗数据处理、深度挖掘与机器学习。</p>
+	</div>
+	<div class="tab">
+		<div class="swiper-container">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide">
+	            	<img src="img/elite.svg" alt="">
+					<p>顶尖团队</p>
+					<span>Elite</span>
+					<span>team</span>
+	            </div>
+	            <div class="swiper-slide">
+	            	<img src="img/elite.svg" alt="">
+					<p>顶尖团队</p>
+					<span>Elite</span>
+					<span>team</span>
+	            </div>
+	            <div class="swiper-slide">
+	            	<img src="img/leading.svg" alt="">
+					<p>国际领先</p>
+					<span>Leading</span>
+					<span>international</span>
+	            </div>
+	            <div class="swiper-slide">
+	            	<img src="img/elite.svg" alt="">
+					<p>顶尖团队</p>
+					<span>Elite</span>
+					<span>team</span>
+	            </div>
+	            <div class="swiper-slide">
+	            	<img src="img/elite.svg" alt="">
+					<p>顶尖团队</p>
+					<span>Elite</span>
+					<span>team</span>
+	            </div>
+	            <div class="swiper-slide">
+	            	<img src="img/elite.svg" alt="">
+					<p>顶尖团队</p>
+					<span>Elite</span>
+					<span>team</span>
+	            </div>
+	            <div class="swiper-slide">
+	            	<img src="img/elite.svg" alt="">
+					<p>顶尖团队</p>
+					<span>Elite</span>
+					<span>team</span>
+	            </div>
+	        </div>
+			<div class="swiper-scrollbar"></div>
+		</div>
+	</div>
+	<div class="about">
+		<div class="clearfix">
+			<span class="number fl">02</span>
+			<h2 class="fl">团队领袖——邓侃CTO</h2>
+		</div>
+		<span class="about_red2"></span>
+		<p>北京大数医达有限公司是一家在人工智能、大数据、云计算方面拥有国际领先水平的高科技企业，，专注于多源异构医疗数据处理、深度挖掘与机器学习。</p>
+	</div>
+	<div class="about hope"> 
+		<div class="clearfix">
+			<span class="number fl">03</span>
+			<h2 class="fl">我们的愿景</h2>
+		</div>
+		<span class="about_red"></span>
+		<p>北京大数医达有限公司是一家在人工智能、大数据、云计算方面拥有国际领先水平的高科技企业，，专注于多源异构医疗数据处理、深度挖掘与机器学习。</p>
+       <video id="videos" controls poster="img/bg.jpg">
+          <source src="img/hd.mp4" type="video/mp4">
+          您的浏览器不支持video标签
+      </video>
+	</div>
+	<div class="about contact">
+		<div class="clearfix" id="a3">
+			<span class="number fl">04</span>
+			<h2 class="fl">联系我们</h2>
+		</div>
+		<span class="about_red"></span>
+		<p>地址：北京市海淀区东北旺西路8号中关村软件园一期3号楼3B区1206室</p>
+		<p>公司邮箱：service@iyoudoctor.com</p>
+		<p>公司网址：www.iyoudoctor.com</p>
+	</div>
+	<div class="map" id="map">
+
+	</div>
+	<footer>
+		<span>京ICP备16013105号-1</span>
+	</footer>
+
 </body>
 </html>
